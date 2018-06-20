@@ -8,4 +8,7 @@
 .dashboard
   %p hello
 .tweet-area
+  = form_for(@tweet) do |f|
+    =f.text_field :text, placeholder: "今どうしてる？"
+    =f.submit class: "__submit"
   = render partial: "tweet", collection: @tweets
