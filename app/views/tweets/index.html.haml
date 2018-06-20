@@ -1,4 +1,9 @@
 .container
+  - if user_signed_in?
+    =link_to "ログアウト",destroy_user_session_path, class: "container__login"
+  -else
+    =link_to "アカウントをお持ちの場合  ログイン", new_user_session_path, class: "container__login"
+
 .main
 .dashboard
   %p hello
