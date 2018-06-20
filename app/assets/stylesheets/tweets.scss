@@ -3,3 +3,17 @@
   height: 50px;
   background-color: blue
 }
+.main{
+  height:100%;
+}
+.dashboard{
+  float:left;
+  width:300px;
+  background-color: red
+
+}
+.tweet{
+  float:right;
+  width:calc(100% - 300px);
+  background-color:green;
+}
