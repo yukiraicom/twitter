@@ -1,7 +1,11 @@
 .container{
   width: 100%;
   height: 50px;
-  background-color: blue
+  &__login{
+    margin-left: 6px;
+    margin-right: 0;
+    float:right;
+  }
 }
 .main{
   height:100%;
