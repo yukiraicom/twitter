@@ -2,9 +2,19 @@ body{
   background-color: #e6ecf0;
 }
 
+.fa-twitter{
+  display: inline-block;
+  width: 24px;
+  height: 21px;
+  color: #1da1f2;
+  cursor: pointer;
+  font-size: 21px;
+}
+
 .container{
   width: 100%;
   height: 50px;
+  text-align: center;
   &__login{
     margin-left: 6px;
     margin-right: 0;
