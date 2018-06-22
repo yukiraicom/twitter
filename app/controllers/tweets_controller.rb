@@ -6,11 +6,12 @@ class TweetsController < ApplicationController
 
   def create
     Tweet.create(tweet_params)
+    redirect_to action: :index
   end
   
   private
   
   def tweet_params
-    params.permit(:text)
+    params.require(:tweet).permit(:text)
   end
 end
