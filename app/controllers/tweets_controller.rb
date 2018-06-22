@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all
@@ -14,4 +17,5 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:text)
   end
+
 end

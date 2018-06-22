@@ -6,7 +6,7 @@
 
 .main
 .dashboard
-  %p hello
+  = render partial: "profilecard"
 .tweet-area
   = form_for(@tweet) do |f|
     =f.text_field :text, placeholder: "今どうしてる？"
