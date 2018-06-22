@@ -1,4 +1,5 @@
 .container
+  = fa_icon("twitter")
   - if user_signed_in?
     =link_to "ログアウト",destroy_user_session_path, class: "container__login"
   -else
