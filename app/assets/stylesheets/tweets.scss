@@ -50,6 +50,7 @@ body{
 .main{
   height:100%;
 }
+
 .dashboard{
   float:left;
   width:300px;
@@ -65,5 +66,8 @@ body{
     border: 1px solid #e6ecf0;
     margin: 0;
   }
+}
+.clearfix{
+  clear:both;
 }
 
