@@ -1,4 +1,10 @@
 .container
+  %ul.nav
+    %li= fa_icon "home", class: "fa-2x" 
+    =link_to "ホーム", "#"
+    %li= fa_icon "home", class: "fa-2x" 
+    =link_to "ホーム", "#"
+
   = fa_icon "twitter", class: "fa-2x"
   - if user_signed_in?
     =link_to "ログアウト",destroy_user_session_path, class: "container__login"
