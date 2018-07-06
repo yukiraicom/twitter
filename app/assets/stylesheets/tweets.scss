@@ -10,12 +10,7 @@ body{
   cursor: pointer;
   font-size: 21px;
 }
-.fa-home{
-  color: #FAB81E;
-}
-.fa-bolt{
-  color: #FAB81E;
-}
+
 
 .container{
   padding-top:15px;
@@ -33,6 +28,7 @@ body{
   &__text{
     text-decoration: none;
     padding-left:0 14px 0 4px;
+    color: #FAB81E;
   }
   span{
     color:black;
