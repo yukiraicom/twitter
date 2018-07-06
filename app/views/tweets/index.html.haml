@@ -27,8 +27,10 @@
   .dashboard
     = render partial: "profilecard"
   .tweet-area
-    = form_for(@tweet) do |f|
-      =f.text_field :text, placeholder: "今どうしてる？"
-      =f.submit class: "__submit"
+    .tweet-area__box
+      .tweet-area__box__tweet
+        = form_for(@tweet) do |f|
+          =f.text_field :text, placeholder: "今どうしてる？"
+          =f.submit class: "__submit"
     = render partial: "tweet", collection: @tweets
   .clearfix
