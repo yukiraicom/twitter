@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all
+    #binding.pry
   end
 
   def create
