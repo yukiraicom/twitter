@@ -19,7 +19,7 @@
 
   = fa_icon "twitter", class: "fa-2x"
   - if user_signed_in?
-    =link_to "ログアウト",destroy_user_session_path, class: "container__login"
+    =link_to "ログアウト",destroy_user_session_path, class: "container__login", method: :delete
   -else
     =link_to "アカウントをお持ちの場合  ログイン", new_user_session_path, class: "container__login"
 
@@ -31,6 +31,6 @@
       .tweet-area__box__tweet
         = form_for(@tweet) do |f|
           =f.text_field :text, placeholder: "今どうしてる？"
-          
+         
     = render partial: "tweet", collection: @tweets
   .clearfix
