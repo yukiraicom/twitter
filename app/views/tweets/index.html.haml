@@ -3,19 +3,19 @@
     %li<
       %a{href: "/", class: "container__text"}<
         = fa_icon "home", class: "fa-2x"
-        %span ホーム
+        %span
     %li<
       %a{href: "#", class: "container__text"}<
         = fa_icon "bolt", class: "fa-2x" 
-        %span モーメント
+        %span
     %li<
       %a{href: "#", class: "container__text"}<
         = fa_icon "bell", class: "fa-2x" 
-        %span 通知
+        %span
     %li<
       %a{href: "#", class: "container__text"}<
         = fa_icon "envelope", class: "fa-2x" 
-        %span メッセージ
+        %span
 
   = fa_icon "twitter", class: "fa-2x"
   - if user_signed_in?
@@ -31,6 +31,6 @@
       .tweet-area__box__tweet
         = form_for(@tweet) do |f|
           =f.text_field :text, placeholder: "今どうしてる？"
-          =f.submit class: "__submit"
+          
     = render partial: "tweet", collection: @tweets
   .clearfix
