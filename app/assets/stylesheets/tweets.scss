@@ -68,10 +68,12 @@ body{
 
 }
 .tweet-area{
+  margin-top: 10px;
   float:right;
   width:calc(100% - 350px);
+  background: #fff;
   &__item{
-    background: #fff;
+    
     border: 1px solid #e6ecf0;
     margin: 0;
   }
@@ -81,6 +83,11 @@ body{
       padding:10px 12px;
     }
   }
+}
+#tweet_text{
+  font-size: 14px;
+  margin-left: 30px;
+  min-width: calc(100% - 30px);
 }
 .clearfix{
   clear:both;
