@@ -80,6 +80,9 @@ body{
     
     margin-top: 3px;
     margin-left: 58px;
+    &__username{
+      font-weight: bold;
+    }
     &__image{
       width: 100%;
     }
