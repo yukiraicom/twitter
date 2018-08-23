@@ -1,4 +1,6 @@
 .tweet-area__boader  
   .tweet-area__item
+    .tweet-area__item__username
+      = tweet.user.name
     = tweet.text
     = image_tag tweet.image_url, class: 'tweet-area__item__image'  if tweet.image.present?
