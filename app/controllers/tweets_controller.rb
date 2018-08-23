@@ -5,7 +5,6 @@ class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all.order("created_at DESC")
-    #binding.pry
   end
 
   def create
@@ -16,7 +15,7 @@ class TweetsController < ApplicationController
   private
   
   def tweet_params
-    params.require(:tweet).permit(:text)
+    params.require(:tweet).permit(:text, :image)
   end
 
 end
