@@ -78,18 +78,33 @@ body{
     margin: 0;
   }
   &__box{
-    
+    background-color: #E8F4FB;
     &__tweet{
       padding:10px 12px;
+      &__form{
+        
+        &__file{
+          display: inline;
+        }
+      }
+      &__phtoto-selector{
+        display: none;
+      }
     }
   }
 }
 #tweet_text{
   font-size: 14px;
   margin-left: 30px;
-  min-width: calc(100% - 30px);
+  padding-bottom: 10px;
+  min-width: calc(100% - 80px);
+  display: inline;
+  border: none;
 }
 .clearfix{
   clear:both;
+}
+#new_tweet{
+  background-color: #fff;
 }
 

@@ -30,7 +30,15 @@
     .tweet-area__box
       .tweet-area__box__tweet
         = form_for(@tweet) do |f|
-          =f.text_field :text, placeholder: "今どうしてる？"
+          .tweet-area__box__tweet__form
+            =f.text_field :text, placeholder: "今どうしてる？"
+            .tweet-area__box__tweet__form__file
+              = f.label :image do
+                = fa_icon "image"
+                .tweet-area__box__tweet__phtoto-selector
+                  = f.file_field :image
+          
+          
          
     = render partial: "tweet", collection: @tweets
   .clearfix
