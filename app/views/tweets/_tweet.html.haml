@@ -1,1 +1,4 @@
-= simple_format(tweet.text, :class => "tweet-area__item")
+.tweet-area__boader  
+  .tweet-area__item
+    = tweet.text
+    = image_tag tweet.image_url, class: 'tweet-area__item__image'  if tweet.image.present?
