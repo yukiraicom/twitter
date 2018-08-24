@@ -19,7 +19,7 @@
 
   = fa_icon "twitter", class: "fa-2x"
   - if user_signed_in?
-    =link_to "マイページ",edit_user_registration_path, class: "container__login", method: :GET
+    =link_to "ログイン情報編集",edit_user_registration_path, class: "container__login", method: :GET
     =link_to "ログアウト",destroy_user_session_path, class: "container__login", method: :delete
   -else
     =link_to "アカウントをお持ちの場合  ログイン", new_user_session_path, class: "container__login"
@@ -29,9 +29,14 @@
     = render partial: "profilecard"
   .tweet-area
     .tweet-area__box
+      
+
       .tweet-area__box__tweet
+        = image_tag current_user.avatar, class: 'tweet-area__box__tweet__form__avatar'
         = form_for(@tweet) do |f|
+          
           .tweet-area__box__tweet__form
+            
             =f.text_field :text, placeholder: "今どうしてる？"
             .tweet-area__box__tweet__form__file
               = f.label :image do

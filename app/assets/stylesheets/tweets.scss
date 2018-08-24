@@ -68,7 +68,16 @@ body{
   &__status{
     ul{
       list-style: none;
+      padding-left: 0;
     }
+    li{
+      display: inline-block;
+      width: 30%;
+    }
+    span{
+      display: block;
+    }
+    padding: 16px;
   }
   &__avatar{
     height: 72px;
@@ -111,8 +120,16 @@ body{
     background-color: #E8F4FB;
     &__tweet{
       padding:10px 12px;
+      position: relative;
       &__form{
         
+        &__avatar{
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          left: 20px;
+          top: 15px
+        }
         &__file{
           display: inline;
         }
@@ -125,7 +142,6 @@ body{
 }
 #tweet_text{
   font-size: 14px;
-  margin-left: 30px;
   padding-bottom: 10px;
   min-width: calc(100% - 80px);
   display: inline;
@@ -136,5 +152,6 @@ body{
 }
 #new_tweet{
   background-color: #fff;
+}#new_tweet{
+  margin-left: 50px;
 }
-
