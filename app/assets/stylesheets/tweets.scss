@@ -65,6 +65,26 @@ body{
   border: 1px solid #e6ecf0;
   background: #fff;
   margin: 10px 12px;
+  &__status{
+    ul{
+      list-style: none;
+    }
+  }
+  &__avatar{
+    height: 72px;
+    width:  72px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+  &__profilecard{
+    display: inline;
+    position: absolute;
+    top: 100px;
+    left: 110px;
+    &__name{
+      
+    }
+  }
 
 }
 .tweet-area{

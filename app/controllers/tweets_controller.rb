@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all.order("created_at DESC")
+    @tweetsnumber = Tweet.where(user_id: current_user.id).length
   end
 
   def create

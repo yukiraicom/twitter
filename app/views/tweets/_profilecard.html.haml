@@ -1,2 +1,11 @@
-%h3
-  = current_user.name
+= image_tag current_user.avatar, class: 'dashboard__avatar'
+.dashboard__profilecard
+  .dashboard__profilecard__name
+    = link_to( current_user.name, "#")
+  .dashboard__profilecard__username
+.dashboard__status
+  %ul
+    %li 
+      %span ツイート
+      %span 
+      =@tweetsnumber
