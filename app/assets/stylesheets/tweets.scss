@@ -61,7 +61,7 @@ body{
 
 .dashboard{
   float:left;
-  width:300px;
+  width:350px;
   border: 1px solid #e6ecf0;
   background: #fff;
   margin: 10px 12px;
@@ -70,7 +70,7 @@ body{
 .tweet-area{
   margin-top: 10px;
   float:right;
-  width:calc(100% - 350px);
+  width:calc(100% - 400px);
   background: #fff;
   &__boader{
     border: 1px solid #e6ecf0;
