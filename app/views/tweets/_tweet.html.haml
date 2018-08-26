@@ -4,3 +4,5 @@
       = tweet.user.name
     = tweet.text
     = image_tag tweet.image_url, class: 'tweet-area__item__image'  if tweet.image.present?
+    .tweet-area__item__tags
+      = gTags tweet.id
