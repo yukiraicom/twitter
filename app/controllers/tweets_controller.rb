@@ -8,7 +8,6 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all.order("created_at DESC")
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
     #@tweetTags = Tweet.find()where(tags: )
-
   end
 
   def create
@@ -23,6 +22,14 @@ class TweetsController < ApplicationController
     redirect_to action: :index
   end
 
+  def tweetText(tweetText)
+    #binding.pry
+    tweet = tweetText.sub(/#.*/, "")
+    #binding.pry
+    return tweet
+  end
+
+
   def gTags(tweetId)
     tweetTags = tweetId
     tag = Tweet.find(tweetTags)
@@ -33,6 +40,7 @@ class TweetsController < ApplicationController
     return tag.tags
   end
 
+  helper_method :tweetText
   helper_method :gTags
   private
   

@@ -10,7 +10,6 @@ class Tweet < ApplicationRecord
      tagHash = {}
      tagHash["tags"] = tag
      Tweet.last.update(tagHash)
-     Tweet.last.update(tagHash)
      #Tweet
      #binding.pry
   end
