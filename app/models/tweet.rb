@@ -4,9 +4,14 @@ class Tweet < ApplicationRecord
   belongs_to :user
 
   def get_hashTag
-    tweet = Tweet.last(1).pluck(:text)
-
-    binding.pry
-    #hashTag = 
+    tweet = Tweet.pluck(:text).last
+     tag = tweet.slice(/#.*/)
+     tag = tag.to_s
+     tagHash = {}
+     tagHash["tags"] = tag
+     Tweet.last.update(tagHash)
+     Tweet.last.update(tagHash)
+     #Tweet
+     #binding.pry
   end
 end
