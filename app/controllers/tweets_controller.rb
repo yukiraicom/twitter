@@ -1,44 +1,32 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!
-  #before_save  :get_hashTag
 
 
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all.order("created_at DESC")
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
-    #@tweetTags = Tweet.find()where(tags: )
+    tweetId = Tweet.last.id
+    @tags = Tag.where(tweet_id: tweetId).pluck(:tag)
+   
+    #binding.pry
   end
 
   def create
     Tweet.create(tweet_params)
-
-    # @text = params[:tweet][:text]
-    # text = Tweet.new(text: @text)
-    # text.save
-    #Tweet.create(@text)
-    # Tweet.create(tweet_params)
-    # binding.pry
     redirect_to action: :index
   end
 
   def tweetText(tweetText)
-    #binding.pry
     tweet = tweetText.sub(/#.*/, "")
-    #binding.pry
     return tweet
   end
 
 
-  def gTags(tweetId)
-    tweetTags = tweetId
-    tag = Tweet.find(tweetTags)
-    #_by(tags: "id = tweetTags and tags: like '#%'")
-    tag.tags
-    #binding.pry
-
-    return tag.tags
-  end
+  # def gTags(tweetId)
+  #   tweetTags = Tag.where(tweet_id: :tweetId)
+  #   return tweetTags
+  # end
 
   helper_method :tweetText
   helper_method :gTags

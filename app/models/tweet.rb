@@ -6,12 +6,19 @@ class Tweet < ApplicationRecord
 
   def get_hashTag
     tweet = Tweet.pluck(:text).last
-     tag = tweet.slice(/#.*/)
-     tag = tag.to_s
-     tagHash = {}
-     tagHash["tags"] = tag
-     Tweet.last.update(tagHash)
-     #Tweet
-     #binding.pry
+    tag = tweet.slice(/#.*/)
+    #binding.pry
+    if tag
+      tags = tag.split("#").reject(&:blank?)
+    else
+      return
+    end
+    tagHash = {}
+    tags.each{|tag|
+      dbTag = Tag.new
+      dbTag.tag = tag
+      dbTag.tweet_id = Tweet.last.id
+      dbTag.save
+    }
   end
 end
