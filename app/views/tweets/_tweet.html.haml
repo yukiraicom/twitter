@@ -4,6 +4,9 @@
       = tweet.user.name
     = tweetText tweet.text
     = image_tag tweet.image_url, class: 'tweet-area__item__image'  if tweet.image.present?
+    -#= binding.pry
+    -#= tweet.tags.tag
     .tweet-area__item__tags
-      - @tags.each do |tag|
-        = "#"+tag
+      - tweet.tags.each do |tag|
+        = link_to "##{tag.tag}", tag_path(1)
+
