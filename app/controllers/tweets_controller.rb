@@ -7,8 +7,8 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all.order("created_at DESC")
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
     tweetId = Tweet.last.id
-    @tags = Tag.where(tweet_id: tweetId).pluck(:tag)
-   
+    #@tags = Tag.where(tweet_id: tweetId).pluck(:tag)
+    @tags = Tag.all
     #binding.pry
   end
 
