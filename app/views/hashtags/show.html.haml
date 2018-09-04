@@ -3,3 +3,16 @@
     .SearchNavigation-textContainer
       %h1 
         = @tag.tag
+.main
+  .dashboard
+    = render partial: "tweets/profilecard"
+  .tweet-area
+    .tweet-area__box
+      
+
+      .tweet-area__box__tweet
+        
+          
+          
+     
+      = render partial: "tweet", collection: @tags, as: :"tag"  
