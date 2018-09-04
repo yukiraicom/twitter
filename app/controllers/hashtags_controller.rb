@@ -1,6 +1,6 @@
 class HashtagsController < ApplicationController
   def show
-    @tag = Hashtag.where("tag = params[:id]")
-    #binding.pry
+    @tag = Hashtag.find_by("tag = '#{params[:id]}'")
   end
 end
+
