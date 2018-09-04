@@ -1,29 +1,3 @@
-.container
-  %ul.nav
-    %li<
-      %a{href: "/", class: "container__text"}<
-        = fa_icon "home", class: "fa-2x"
-        %span
-    %li<
-      %a{href: "#", class: "container__text"}<
-        = fa_icon "bolt", class: "fa-2x" 
-        %span
-    %li<
-      %a{href: "#", class: "container__text"}<
-        = fa_icon "bell", class: "fa-2x" 
-        %span
-    %li<
-      %a{href: "#", class: "container__text"}<
-        = fa_icon "envelope", class: "fa-2x" 
-        %span
-
-  = fa_icon "twitter", class: "fa-2x"
-  - if user_signed_in?
-    =link_to "ログイン情報編集",edit_user_registration_path, class: "container__login", method: :GET
-    =link_to "ログアウト",destroy_user_session_path, class: "container__login", method: :delete
-  -else
-    =link_to "アカウントをお持ちの場合  ログイン", new_user_session_path, class: "container__login"
-
 .main
   .dashboard
     = render partial: "profilecard"
