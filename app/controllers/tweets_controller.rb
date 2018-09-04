@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
     tweetId = Tweet.last.id
     #@tags = Tag.where(tweet_id: tweetId).pluck(:tag)
-    @tags = Tag.all
+    @tags = Hashtag.all
     #binding.pry
   end
 
