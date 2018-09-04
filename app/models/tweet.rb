@@ -15,7 +15,7 @@ class Tweet < ApplicationRecord
     end
     tagHash = {}
     tags.each{|tag|
-      dbTag = Tag.new
+      dbTag = Hashtag.new
       dbTag.tag = tag
       dbTag.tweet_id = Tweet.last.id
       dbTag.save
