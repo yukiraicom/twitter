@@ -3,14 +3,10 @@
     = render partial: "profilecard"
   .tweet-area
     .tweet-area__box
-      
-
       .tweet-area__box__tweet
         = image_tag current_user.avatar, class: 'tweet-area__box__tweet__form__avatar'
         = form_for(@tweet) do |f|
-          
           .tweet-area__box__tweet__form
-            
             =f.text_field :text, placeholder: "今どうしてる？"
             .tweet-area__box__tweet__form__file
               = f.label :image do
@@ -18,7 +14,5 @@
                 .tweet-area__box__tweet__phtoto-selector
                   = f.file_field :image
           
-          
-        
     = render partial: "tweet", collection: @tweets
   .clearfix

@@ -1,13 +1,11 @@
 .tweet-area__boader  
+  = image_tag tag.tweet.user.avatar, class: :avatar
   .tweet-area__item
     .tweet-area__item__username
       = tag.tweet.user.name
-      
     = tweetText tag.tweet.text
-    = image_tag tag.tweet.image_url, class: 'tweet-area__item__image'  if tag.tweet.image.present?
-    -#= binding.pry
-    -#= tweet.tags.tag
     .tweet-area__item__tags
       - tag.tweet.hashtags.each do |tag|
         = link_to "##{tag.tag}", hashtag_path(tag.tag)
+    = image_tag tag.tweet.image, class: 'tweet-area__item__image'  if tag.tweet.image.present? 
 
