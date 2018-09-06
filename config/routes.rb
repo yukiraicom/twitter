@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'tweets#index'
   resources :tweets
   resources :hashtags, only: :show
+  resources :users, only: :show
 end
