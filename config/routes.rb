@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   resources :tweets
   resources :hashtags, only: :show
   resources :users, only: :show
-  test
 end
