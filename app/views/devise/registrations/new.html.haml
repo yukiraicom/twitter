@@ -23,8 +23,12 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
 
+    %p アバター
     .field
       = f.file_field :avatar
+    %p プロフィール画像
+    .field
+      = f.file_field :profileCanopy
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

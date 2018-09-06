@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :profileCanopy, AvatarUploader
   has_many :tweets
 end
