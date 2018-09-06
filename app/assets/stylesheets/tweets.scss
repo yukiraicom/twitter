@@ -106,16 +106,25 @@ body{
   background: #fff;
   &__boader{
     border: 1px solid #e6ecf0;
-
+    position: relative;
+    .avatar{
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
   }
   &__item{
-    
+   
     margin-top: 3px;
     margin-left: 58px;
     &__username{
       font-weight: bold;
     }
     &__image{
+      // position: absolute;
+      width: 35px;
       width: 100%;
     }
   }
