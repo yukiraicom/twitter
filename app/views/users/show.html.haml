@@ -1,2 +1,7 @@
-.ProfileCanopy
-  = image_tag @user.profileCanopy
+.user-main
+  .user-main__area
+    = image_tag @user.avatar, class: :avatar
+    %p.followText フォロー
+  .user-main__tweet
+    = render partial: "tweet", collection: @tweets
+  
