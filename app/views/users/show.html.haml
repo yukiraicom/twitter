@@ -1,7 +1,11 @@
 .user-main
   .user-main__area
     = image_tag @user.avatar, class: :avatar
-    %p.followText フォロー
+    - if @user.id == current_user.id
+      %p.followText anata
+    - else
+      = form_for @follow, url: :follow_index do |f|
+        = f.submit "フォロー", class: "followText"
   .user-main__tweet
     = render partial: "tweet", collection: @tweets
   
