@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @tweets = @tweets = Tweet.where(user_id: params[:id]).order("created_at DESC")
@@ -6,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    
   end
 
   def tweetText(tweetText)

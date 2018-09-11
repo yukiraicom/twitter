@@ -1,11 +1,18 @@
+-# - binding.pry
 .user-main
   .user-main__area
     = image_tag @user.avatar, class: :avatar
     - if @user.id == current_user.id
-      %p.followText anata
+      %p.followText 詳細
     - else
-      = form_for @follow, url: :follow_index do |f|
+      %p ooo
+      -# = form_for @follow, url: :user_follows_path @user, method: "post" do |f|
+      = form_for [@user, @follow] do |f|
+
+
         = f.submit "フォロー", class: "followText"
   .user-main__tweet
     = render partial: "tweet", collection: @tweets
   
+
+  -# html: {method: "post"}) do |f|
