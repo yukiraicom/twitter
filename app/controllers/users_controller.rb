@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @tweets = @tweets = Tweet.where(user_id: params[:id]).order("created_at DESC")
     @follow = Follow.new
+    @associations = Follow.where(follow_id: current_user.id)
+    @associations.each do |association|
+      @boolean = false if association.user_id == @user 
+    end
+    #binding.pry
   end
 
   def create
