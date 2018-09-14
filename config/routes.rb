@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :tweets
   resources :hashtags, only: :show
   resources :users, only: :show do
-    resources :follows, only: :create
+    resources :follows, only: [:create, :destroy]
   end
 end
