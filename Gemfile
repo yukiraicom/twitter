@@ -61,3 +61,4 @@ gem 'erb2haml'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'html2haml'
+gem "jquery-rails"
