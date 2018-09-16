@@ -1,9 +1,12 @@
+
 class FollowsController < ApplicationController
   def create
     # binding.pry
     # follow = Follow.find_by(follow_id: "current_user.id")
     # if follow.
     Follow.create(user_id: follow_params, follow_id: current_user.id)
+    #binding.pry
+    redirect_to user_path(params.require(:user_id))
     #binding.pry
   end
 

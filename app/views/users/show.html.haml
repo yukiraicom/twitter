@@ -8,13 +8,10 @@
       %p ooo
       -# = form_for @follow, url: :user_follows_path @user, method: "post" do |f|
       = form_for [@user, @follow], url: user_follows_path(@user) do |f|
-        = f.submit "フォロー", class: "followText"
+        = f.submit "フォロー", class: "followText follow"
     - else
       = form_for [@user, @follow], url: user_follow_path(@user), method: "delete" do |f|
-        = f.submit "フォロー中", class: "followText"
-
-        
-
+        = f.submit "フォロー中", class: "followText unfollow"
   .user-main__tweet
     = render partial: "tweet", collection: @tweets
   
