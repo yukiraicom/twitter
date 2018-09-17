@@ -2,11 +2,8 @@
   = image_tag tweet.user.avatar, class: :avatar
   .tweet-area__item
     .tweet-area__item__username
-      -# =binding.pry
-      - if current_user == tweet.user
-        %p #{tweet.user.name}
-      - else
-        = link_to "#{tweet.user.name}", user_path(tweet.user.id)
+     
+      = link_to "#{tweet.user.name}", user_path(tweet.user.id)
     = tweetText tweet.text
     .tweet-area__item__tags
       - tweet.hashtags.each do |tag|

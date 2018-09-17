@@ -1,3 +1,46 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-main{
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 800px;
+  margin: auto;
+  position: relative;
+  background-color: #FFF;
+  margin-top: 10px;
+  
+  &__area{
+    position: relative;
+    margin-left: 60px;
+    .avatar{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      top: 25px;
+      left: 220px;
+      position: absolute;
+    }
+    .followText{
+      display: inline-block;
+      margin-top: 40px;
+      margin-left: 350px;
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+      width:200px;
+      font-size:24px;
+      font-weight:bold;
+      text-decoration:none;
+      text-align:center;
+      padding:8px 0 10px;
+      color:#49a9d4;
+      background-color:#FFF;
+      border-radius:5px;
+    }
+  }
+  &__tweet{
+    border: 1px solid #e6ecf0;
+    position: relative;
+    margin:0 auto;
+    width: 70%;
+    
+  }
+}
