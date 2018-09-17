@@ -9,6 +9,8 @@ class TweetsController < ApplicationController
     tweetId = Tweet.last.id
     #@tags = Tag.where(tweet_id: tweetId).pluck(:tag)
     @tags = Hashtag.all
+    @follow = Follow.where(user_id: current_user.id).count
+    @follower = Follow.where(follow_id: current_user.id).count
     #binding.pry
   end
 
