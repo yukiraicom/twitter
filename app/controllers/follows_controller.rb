@@ -4,7 +4,7 @@ class FollowsController < ApplicationController
     # binding.pry
     # follow = Follow.find_by(follow_id: "current_user.id")
     # if follow.
-    Follow.create(user_id: follow_params, follow_id: current_user.id)
+    Follow.create(follow_id: follow_params, user_id: current_user.id)
     #binding.pry
     redirect_to user_path(params.require(:user_id))
     #binding.pry
@@ -12,7 +12,7 @@ class FollowsController < ApplicationController
 
   def destroy
     #binding.pry
-    follow = Follow.find_by(follow_id: current_user.id, user_id: User.find(params[:id]).id)
+    follow = Follow.find_by(user_id: current_user.id, follow_id: User.find(params[:id]).id)
     follow.destroy
     redirect_to controller: 'users', action: 'show'
   end
