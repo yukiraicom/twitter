@@ -1,4 +1,9 @@
 @import "./tweets.scss";
-@import "font-awesome";
 @import "./tags.scss";
 @import "./users.scss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.awesome{
+	font-family: FontAwesome; //フォント指定する
+}

@@ -98,6 +98,7 @@ body{
   }
 
 }
+
 .tweet-area{
   margin-top: 10px;
   margin-right: 30px;
@@ -117,6 +118,18 @@ body{
 
     }
   }
+  &__action-area{
+    margin-left: 50px;
+    .fa-comment-o{
+      margin-left: 80px;
+    }
+    .fa{
+      margin-left: 50px;
+    }
+    
+  }
+
+
   &__item{
    
     margin-top: 3px;
