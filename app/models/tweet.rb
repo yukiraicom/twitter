@@ -3,6 +3,7 @@ class Tweet < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
   has_many :hashtags
+  has_many :favorites
 
   def get_hashTag
     tweet = Tweet.pluck(:text).last
