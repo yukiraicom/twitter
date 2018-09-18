@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @associations.each do |association|
       #binding.pry
       if @boolean == true then #フォローしているか確認（なければtrue)
-        if association.follow_id. == @user.id.to_s then
+        #binding.pry
+        if association.follow_id. == @user.id then
           @boolean = "false"  
           #フォロー解除ボタン
           #binding.pry
