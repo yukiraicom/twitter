@@ -1,6 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!
-
+  before_action :authenticate_user! 
 
   def index
     @tweet = Tweet.new
@@ -12,6 +11,7 @@ class TweetsController < ApplicationController
     @follow = Follow.where(user_id: current_user.id).count
     @follower = Follow.where(follow_id: current_user.id).count
     #binding.pry
+    #if Favorite.where(user_id: current_user.id, tweet_id: )
   end
 
   def create

@@ -1,4 +1,5 @@
-.tweet-area__boader 
+.tweet-area__boader
+  -# = binding.pry
   = image_tag tweet.user.avatar, class: :avatar
   .tweet-area__item
     .tweet-area__item__username
@@ -15,4 +16,12 @@
   .tweet-area__action-area
     = fa_icon "comment-o"
     = fa_icon "retweet",{"aria-hidden" => "true"}
-    = fa_icon "heart-o",{"aria-hidden" => "true"}
+    -# = binding.pry
+    - if getFavorite(tweet).nil?
+      = fa_icon "heart-o",{"aria-hidden" => "true"}
+    - else
+      
+      = fa_icon "heart-o fa-icon-black",{"aria-hidden" => "true"}
+
+
+    -# 黒色のアイコン
