@@ -9,5 +9,5 @@ class User < ApplicationRecord
   mount_uploader :profileCanopy, AvatarUploader
   has_many :tweets
   has_many :follows
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 end
