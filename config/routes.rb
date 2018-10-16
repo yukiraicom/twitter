@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     resources :follows, only: [:create, :destroy]
   end
+  resources :favorites, only: [:create, :destroy]
 end

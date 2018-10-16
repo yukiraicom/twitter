@@ -12,16 +12,18 @@
     .tweet-area__item__tags
       - tweet.hashtags.each do |tag|
         = link_to "##{tag.tag}", hashtag_path(tag.tag)
+
+
+
+        -# =binding.pry
     = image_tag tweet.image, class: 'tweet-area__item__image'  if tweet.image.present?
   .tweet-area__action-area
     = fa_icon "comment-o"
     = fa_icon "retweet",{"aria-hidden" => "true"}
     -# = binding.pry
     - if getFavorite(tweet).nil?
-      = fa_icon "heart-o",{"aria-hidden" => "true"}
+      = button_to favorites_path() do
+        = fa_icon "heart-o",{"aria-hidden" => "true"}
+        -# = button_to favorites_path() placeholder "#{fa_icon "heart-o",{"aria-hidden" => "true"}}"
     - else
-      
-      = fa_icon "heart icon-black",{"aria-hidden" => "true"}
-
-
-    -# 黒色のアイコン
+      = fa_icon "heart icon-red",{"aria-hidden" => "true"}
