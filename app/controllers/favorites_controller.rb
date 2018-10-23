@@ -4,5 +4,8 @@ class FavoritesController < ApplicationController
     Favorite.create(user_id: current_user.id, tweet_id: tweetId)
     # //カスタムデータ属性でtweet.idを引っ張る
   end
+
+  def destroy
+  end
 end
   
