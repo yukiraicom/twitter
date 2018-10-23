@@ -1,18 +1,19 @@
 $(document).on('turbolinks:load', function() {
   $('.fa-heart-o').on("click",function(){
-  var tweet = $('.tweet-area__boader').first().data("id");
-  console.log(tweet);
-    $.ajax({
-      type: "POST",
-      url: '/favorites',
-      data: {id: tweet},
-      dataType: "json"
+    $(this).prop('id', 'touch')
+    var tweet = $('.tweet-area__boader').first().data("id");
+      $.ajax({
+        type: "POST",
+        url: '/favorites',
+        data: {id: tweet},
+        dataType: "json"
+      })
+      .done(function(data){
+        $('#touch').removeClass('fa fa-heart-o');
+        $('#touch').addClass('fa fa-heart fa-icon-red'); 
+      })
+      .fail(function(){
+        alert('fail');
+      })
     })
-    .done(function(data){
-      $(this).addClass('icon-red');
-    })
-    .fail(function(){
-      alert('fail');
-    })
-  })
 })
