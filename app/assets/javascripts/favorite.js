@@ -1,7 +1,8 @@
 $(document).on('turbolinks:load', function() {
   $('.fa-heart-o').on("click",function(){
     $(this).prop('id', 'touch')
-    var tweet = $('.tweet-area__boader').first().data("id");
+    var tweet = $(this).parent().parent().data("id");
+    console.log(tweet)
       $.ajax({
         type: "POST",
         url: '/favorites',
@@ -15,5 +16,15 @@ $(document).on('turbolinks:load', function() {
       .fail(function(){
         alert('fail');
       })
+  })
+
+  $('.fa-heart-o').on("click",function(){
+    $('.fa-heart-o').on("click",function(){
+
     })
+
+  })
+
+
+
 })
