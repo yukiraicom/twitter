@@ -1,8 +1,8 @@
 $(document).on('turbolinks:load', function() {
   $('.fa-heart-o').on("click",function(){
-    $(this).prop('id', 'touch')
+    console.log("fa-heart-o発火")
+    $(this).prop('id', 'red')
     var tweet = $(this).parent().parent().data("id");
-    console.log(tweet)
       $.ajax({
         type: "POST",
         url: '/favorites',
@@ -10,19 +10,17 @@ $(document).on('turbolinks:load', function() {
         dataType: "json"
       })
       .done(function(data){
-        $('#touch').removeClass('fa fa-heart-o');
-        $('#touch').addClass('fa fa-heart fa-icon-red'); 
+        $('#red').removeClass('fa fa-heart-o');
+        $('#red').addClass('fa fa-heart fa-icon-red'); 
       })
       .fail(function(){
         alert('fail');
       })
   })
 
-  $('.fa-heart-o').on("click",function(){
-    $('.fa-heart-o').on("click",function(){
-
-    })
-
+  $('.fa-icon-red').on("click",function(){
+    console.log("fa-icon-red発火")
+    $(this).prop('id', 'unred')
   })
 
 
