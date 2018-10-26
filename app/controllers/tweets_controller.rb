@@ -3,13 +3,15 @@ class TweetsController < ApplicationController
 
   def index
     @tweet = Tweet.new
+    binding.pry
+
     @tweets = Tweet.all.order("created_at DESC")
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
     tweetId = Tweet.last.id
     #@tags = Tag.where(tweet_id: tweetId).pluck(:tag)
     @tags = Hashtag.all
     @follow = Follow.where(user_id: current_user.id).count
-    @follower = Follow.where(follow_id: current_user.id).count
+    @follower = Follow.where(followed_id: current_user.id).count
     #binding.pry
     #if Favorite.where(user_id: current_user.id, tweet_id: )
   end
