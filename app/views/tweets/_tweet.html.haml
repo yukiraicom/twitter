@@ -1,6 +1,6 @@
 .tweet-area__boader{data: {id: tweet.id}}
   -# = binding.pry
-  = image_tag tweet.user.avatar, class: :avatar
+  = image_tag tweet.user.avatar, class: :avatar if tweet.user.avatar
   .tweet-area__item
     .tweet-area__item__username
       -# =binding.pry
