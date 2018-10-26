@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  $('.fa-heart-o').on("click",function(){
-    console.log("fa-heart-o発火")
+  $(".tweet-area__action-area").on("click", '.fa-heart-o', function(){ //onでlive機能を使うため、on("...", "sekector", ~~)
     $(this).prop('id', 'red')
     var tweet = $(this).parent().parent().data("id");
       $.ajax({
@@ -12,17 +11,19 @@ $(document).on('turbolinks:load', function() {
       .done(function(data){
         $('#red').removeClass('fa fa-heart-o');
         $('#red').addClass('fa fa-heart fa-icon-red'); 
+        console.log("done")
       })
       .fail(function(){
         alert('fail');
       })
   })
 
-  $('.fa-icon-red').on("click",function(){
-    console.log("fa-icon-red発火")
+  $(".tweet-area__action-area").on("click", ".fa-icon-red", function(){
     $(this).prop('id', 'unred')
+    $('#unred').removeClass('fa fa-heart fa-icon-red');
+    $('#unred').addClass('fa fa-heart-o');
   })
 
-
+  
 
 })
