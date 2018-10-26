@@ -3,7 +3,6 @@ class TweetsController < ApplicationController
 
   def index
     @tweet = Tweet.new
-    binding.pry
 
     @tweets = Tweet.all.order("created_at DESC")
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
