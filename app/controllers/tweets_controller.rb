@@ -2,17 +2,23 @@ class TweetsController < ApplicationController
   before_action :authenticate_user! 
 
   def index
-    @tweet = Tweet.new
+    currentUser = User.find(current_user.id)
+    followUser = Follow.where(user_id: currentUser.id)
 
-    @tweets = Tweet.all.order("created_at DESC")
+    a = 0
+    b = Array.new
+    while a < followUser.length do
+      b.push(followUser[a].followed_id)
+      a += 1
+    end
+
+    @tweets = Tweet.where(user_id: b)
+    @tweet = Tweet.new
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
     tweetId = Tweet.last.id
-    #@tags = Tag.where(tweet_id: tweetId).pluck(:tag)
     @tags = Hashtag.all
     @follow = Follow.where(user_id: current_user.id).count
     @follower = Follow.where(followed_id: current_user.id).count
-    #binding.pry
-    #if Favorite.where(user_id: current_user.id, tweet_id: )
   end
 
   def create
@@ -25,24 +31,13 @@ class TweetsController < ApplicationController
     return tweet
   end
 
-
-  # def gTags(tweetId)
-  #   tweetTags = Tag.where(tweet_id: :tweetId)
-  #   return tweetTags
-  # end
-
   helper_method :tweetText
   helper_method :gTags
+  
   private
   
   def tweet_params
     params.require(:tweet).permit(:text, :image).merge(user_id: current_user.id)
     #binding.pry
   end
-
-  # def get_hashTag
-  #   binding.pry
-  #   #hashTag = 
-  # end
-
 end
