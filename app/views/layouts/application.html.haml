@@ -35,7 +35,7 @@
         -else
           =link_to "アカウントをお持ちの場合  ログイン", new_user_session_path, class: "container__login__a"
 
-      = form_tag('/search', class: "container__searchForm", method: "post") do
+      = form_tag('/searches', class: "container__searchForm", method: "post") do
         = text_field :word, :name, class: "container__searchForm__text"
         
     = yield
