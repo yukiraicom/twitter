@@ -26,7 +26,7 @@
             = fa_icon "envelope", class: "fa-2x" 
             %span
 
-      = fa_icon "twitter", class: "fa-2x"
+      %a.fa.fa-twitter.fa-2x{:href => "/"}
       - if user_signed_in?
         =link_to "ログイン情報編集",edit_user_registration_path, class: "container__login", method: :GET
         =link_to "ログアウト",destroy_user_session_path, class: "container__login", method: :delete
