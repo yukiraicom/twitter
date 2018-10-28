@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy]
   end
   resources :favorites, only: [:create, :destroy]
+  resources :searchs, only: [:index]
+  post '/searchs', to: 'searchs#search'
 end
