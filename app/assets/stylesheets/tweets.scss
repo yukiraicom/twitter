@@ -24,10 +24,26 @@ body{
   height: 50px;
   text-align: center;
   display: inline-block;
+  &__searchForm{
+    display: inline;
+    border: 1px solid #e6ecf0;
+    width: 139px;
+    &__text{
+      border-radius: 21px;
+      float: right;
+      margin-right: 20px;
+      margin-top: 15px;
+
+        }
+
+  }
   &__login{
     margin-left: 6px;
     margin-right: 0;
     float:right;
+    &__a{
+      display: block;
+    }
   }
   clear: both;
   &__text{
