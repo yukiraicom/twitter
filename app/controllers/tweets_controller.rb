@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user! 
 
   def index
+    # binding.pry
     currentUser = User.find(current_user.id)
     followUser = Follow.where(user_id: currentUser.id)
 

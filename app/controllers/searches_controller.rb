@@ -1,11 +1,7 @@
 class SearchesController < ApplicationController
-  def index
-  end
   def search
     searchWord = search_params
-    User.where('name LIKE ?', "%#{searchWord}%")
-    binding.pry
-    redirect_to action: 'index'
+    @users = User.where('name LIKE ?', "%#{searchWord}%")
   end
 
   def search_params
