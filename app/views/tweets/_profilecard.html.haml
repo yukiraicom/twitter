@@ -1,0 +1,19 @@
+= image_tag current_user.avatar, class: 'dashboard__avatar' if current_user.avatar
+.dashboard__profilecard
+  .dashboard__profilecard__name
+    = link_to( current_user.name, "#{user_path(current_user.id)}")
+  .dashboard__profilecard__username
+.dashboard__status
+  %ul
+    %li 
+      %span ツイート
+      %span 
+        =@tweetsnumber
+    %li
+      %span フォロー
+      %span
+        = @follow
+    %li
+      %span フォロワー
+      %span
+        = @follower
