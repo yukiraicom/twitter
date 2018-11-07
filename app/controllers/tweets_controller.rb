@@ -2,9 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user! 
 
   def index
-    # binding.pry
-    currentUser = User.find(current_user.id)
-    followUser = Follow.where(user_id: currentUser.id)
+    followUser = Follow.where(user_id: current_user.id)
 
     a = 0
     b = Array.new
@@ -12,8 +10,8 @@ class TweetsController < ApplicationController
       b.push(followUser[a].followed_id)
       a += 1
     end
-
-    @tweets = Tweet.where(user_id: b)
+    b.push(current_user.id) #自分のツイート
+    @tweets = Tweet.where(user_id: b).order("created_at DESC")
     @tweet = Tweet.new
     @tweetsnumber = Tweet.where(user_id: current_user.id).length
     tweetId = Tweet.last.id
