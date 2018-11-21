@@ -33,7 +33,8 @@ class ProfileCanopyUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
   #process resize_to_fit: [1500,1500]
-  resize_to_geometry_string("1500x1500")
+  #resize_to_geometry_string("1500x1500")
+  #resize_to_geometry_stringはrails-erdでエラーが出るのでとりまコメントアウト
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
